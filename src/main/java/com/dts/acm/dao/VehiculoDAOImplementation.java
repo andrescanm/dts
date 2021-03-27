@@ -4,44 +4,45 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import org.hibernate.query.Query;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dts.acm.entity.Usuario;
+import com.dts.acm.entity.Vehiculo;
 
 @Repository
-public class UsuarioDAOImplementation implements UsuarioDAOInterface{
-	
+public class VehiculoDAOImplementation implements VehiculoDAOInterface {
+
 	@Autowired
     private EntityManager entityManager;
-
+	
 	@Override
-	public List<Usuario> findAll() {
+	public List<Vehiculo> findAll() {
 		Session currentSession = entityManager.unwrap(Session.class);
-        Query<Usuario> theQuery = currentSession.createQuery("from Usuario", Usuario.class);
-        List<Usuario> usuarios = theQuery.getResultList();
-        return usuarios;
+        Query<Vehiculo> theQuery = currentSession.createQuery("from Vehiculo", Vehiculo.class);
+        List<Vehiculo> vehiculos = theQuery.getResultList();
+        return vehiculos;
 	}
 
 	@Override
-	public Usuario findById(int id) {
+	public Vehiculo findById(int id) {
 		Session currentSession = entityManager.unwrap(Session.class);
-        Usuario usuario = currentSession.get(Usuario.class, id);
-        return usuario;
+		Vehiculo vehiculo = currentSession.get(Vehiculo.class, id);
+        return vehiculo;
 	}
 
 	@Override
-	public void save(Usuario usuario) {
+	public void save(Vehiculo vehiculo) {
 		Session currentSession = entityManager.unwrap(Session.class);
-        currentSession.saveOrUpdate(usuario);
+        currentSession.saveOrUpdate(vehiculo);
 	}
 
 	@Override
 	public void deleteById(int id) {
 		Session currentSession = entityManager.unwrap(Session.class);
-        Query<Usuario> theQuery = currentSession.createQuery("delete from Usuario where idUsuario=:id", Usuario.class);
+        Query<Vehiculo> theQuery = currentSession.createQuery("delete from Vehiculo where idVehiculo=:id", Vehiculo.class);
         theQuery.setParameter("idUser", id);
         theQuery.executeUpdate();
 	}
