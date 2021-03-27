@@ -32,7 +32,7 @@ public class EmpresaRestController {
 	}
 
 	@GetMapping("/listar_empresas/{empresaId}")
-	public Empresa getUser(@PathVariable int empresaId) {
+	public Empresa getObject(@PathVariable int empresaId) {
 		Empresa empresa = empresaService.findById(empresaId);
 
 		if (empresa == null) {
@@ -42,19 +42,19 @@ public class EmpresaRestController {
 	}
 
 	@PostMapping("/guardar_empresa")
-	public Empresa addUser(@RequestBody Empresa empresa) {
+	public Empresa addObject(@RequestBody Empresa empresa) {
 		empresaService.save(empresa);
 		return empresa;
 	}
 
 	@PutMapping("/actualizar_empresa")
-	public Empresa updateUser(@RequestBody Empresa empresa) {
+	public Empresa updateObject(@RequestBody Empresa empresa) {
 		empresaService.save(empresa);
 		return empresa;
 	}
 
 	@DeleteMapping("eliminar_empresa/{empresaId}")
-	public String deteteUser(@PathVariable int empresaId) {
+	public String deteteObject(@PathVariable int empresaId) {
 		Empresa empresa = empresaService.findById(empresaId);
 		if (empresa == null) {
 			throw new RuntimeException("No se encontró la empresa -" + empresaId);

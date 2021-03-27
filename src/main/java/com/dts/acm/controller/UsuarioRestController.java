@@ -32,7 +32,7 @@ public class UsuarioRestController {
 	}
 
 	@GetMapping("/listar_usuarios/{usuarioId}")
-	public Usuario getUser(@PathVariable int usuarioId) {
+	public Usuario getObject(@PathVariable int usuarioId) {
 		Usuario usuario = usuarioService.findById(usuarioId);
 
 		if (usuario == null) {
@@ -42,19 +42,19 @@ public class UsuarioRestController {
 	}
 
 	@PostMapping("/guardar_usuario")
-	public Usuario addUser(@RequestBody Usuario usuario) {
+	public Usuario addObject(@RequestBody Usuario usuario) {
 		usuarioService.save(usuario);
 		return usuario;
 	}
 
 	@PutMapping("/actualizar_usuario")
-	public Usuario updateUser(@RequestBody Usuario usuario) {
+	public Usuario updateObject(@RequestBody Usuario usuario) {
 		usuarioService.save(usuario);
 		return usuario;
 	}
 
 	@DeleteMapping("eliminar_usuario/{usuarioId}")
-	public String deteteUser(@PathVariable int usuarioId) {
+	public String deteteObject(@PathVariable int usuarioId) {
 		Usuario usuario = usuarioService.findById(usuarioId);
 		if (usuario == null) {
 			throw new RuntimeException("No se encontró el usuario -" + usuarioId);

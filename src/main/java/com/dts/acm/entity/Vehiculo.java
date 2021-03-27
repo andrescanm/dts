@@ -42,7 +42,7 @@ public class Vehiculo {
 	private String pesoSeco;
 	
 	@Column(name="peso_bruto") 
-	private short pesoBruto;
+	private String pesoBruto;
 	
 	@Column(name="cantidad_puertas") 
 	private short cantidadPuertas; 
@@ -152,11 +152,11 @@ public class Vehiculo {
 		this.pesoSeco = pesoSeco;
 	}
 
-	public short getPesoBruto() {
+	public String getPesoBruto() {
 		return pesoBruto;
 	}
 
-	public void setPesoBruto(short pesoBruto) {
+	public void setPesoBruto(String pesoBruto) {
 		this.pesoBruto = pesoBruto;
 	}
 
