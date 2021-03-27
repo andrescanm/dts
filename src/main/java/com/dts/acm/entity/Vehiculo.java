@@ -61,7 +61,7 @@ public class Vehiculo {
 	}
 
 	public Vehiculo(int idVehiculo, String placa, String motor, String chasis, String modelo, Date fechaMatricula,
-			short pasajerosSentados, short pasajerosPie, String pesoSeco, short pesoBruto, short cantidadPuertas,
+			short pasajerosSentados, short pasajerosPie, String pesoSeco, String pesoBruto, short cantidadPuertas,
 			String marca, String linea, int idEmpresa) {
 		super();
 		this.idVehiculo = idVehiculo;
