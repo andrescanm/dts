@@ -7,15 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table(name = "empresa")
-@AllArgsConstructor
-@Getter
-@Setter
 public class Empresa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,4 +38,103 @@ public class Empresa {
 
 	@Column(name = "telefono")
 	private String telefono;
+
+	public Empresa() {
+		super();
+	}
+
+	public Empresa(int idEmpresa, int tipoIdentificacion, int numeroNdentificacion, String nombre, String direccion,
+			String ciudad, String departamento, String pais, String telefono) {
+		super();
+		this.idEmpresa = idEmpresa;
+		this.tipoIdentificacion = tipoIdentificacion;
+		this.numeroNdentificacion = numeroNdentificacion;
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.ciudad = ciudad;
+		this.departamento = departamento;
+		this.pais = pais;
+		this.telefono = telefono;
+	}
+
+	public int getIdEmpresa() {
+		return idEmpresa;
+	}
+
+	public void setIdEmpresa(int idEmpresa) {
+		this.idEmpresa = idEmpresa;
+	}
+
+	public int getTipoIdentificacion() {
+		return tipoIdentificacion;
+	}
+
+	public void setTipoIdentificacion(int tipoIdentificacion) {
+		this.tipoIdentificacion = tipoIdentificacion;
+	}
+
+	public int getNumeroNdentificacion() {
+		return numeroNdentificacion;
+	}
+
+	public void setNumeroNdentificacion(int numeroNdentificacion) {
+		this.numeroNdentificacion = numeroNdentificacion;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+
+	public String getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(String departamento) {
+		this.departamento = departamento;
+	}
+
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	@Override
+	public String toString() {
+		return "Empresa [idEmpresa=" + idEmpresa + ", tipoIdentificacion=" + tipoIdentificacion
+				+ ", numeroNdentificacion=" + numeroNdentificacion + ", nombre=" + nombre + ", direccion=" + direccion
+				+ ", ciudad=" + ciudad + ", departamento=" + departamento + ", pais=" + pais + ", telefono=" + telefono
+				+ "]";
+	}
+	
 }
