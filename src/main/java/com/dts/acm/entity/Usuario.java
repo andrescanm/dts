@@ -16,7 +16,7 @@ public class Usuario {
 	private int idUsuario;
 	
 	@Column(name="tipoIdentificacion")
-	private byte tipoIdentificacion;
+	private String tipoIdentificacion;
 	
 	@Column(name="numeroIdentificacion")
 	private int numeroIdentificacion;
@@ -54,6 +54,25 @@ public class Usuario {
 	public Usuario() {
 	}
 	
+	public Usuario(int idUsuario, String tipoIdentificacion, int numeroIdentificacion, String nombre, String direccion,
+			String ciudad, String departamento, String pais, String telefono, int idEmpresa, byte esRepresentanteLegal,
+			byte esConductor, byte esAdmin) {
+		super();
+		this.idUsuario = idUsuario;
+		this.tipoIdentificacion = tipoIdentificacion;
+		this.numeroIdentificacion = numeroIdentificacion;
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.ciudad = ciudad;
+		this.departamento = departamento;
+		this.pais = pais;
+		this.telefono = telefono;
+		this.idEmpresa = idEmpresa;
+		this.esRepresentanteLegal = esRepresentanteLegal;
+		this.esConductor = esConductor;
+		this.esAdmin = esAdmin;
+	}
+
 	public int getIdUsuario() {
 		return idUsuario;
 	}
@@ -62,11 +81,11 @@ public class Usuario {
 		this.idUsuario = idUsuario;
 	}
 
-	public byte getTipoIdentificacion() {
+	public String getTipoIdentificacion() {
 		return tipoIdentificacion;
 	}
 
-	public void setTipoIdentificacion(byte tipoIdentificacion) {
+	public void setTipoIdentificacion(String tipoIdentificacion) {
 		this.tipoIdentificacion = tipoIdentificacion;
 	}
 

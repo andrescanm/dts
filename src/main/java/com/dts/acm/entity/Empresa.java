@@ -16,7 +16,7 @@ public class Empresa {
 	private int idEmpresa;
 
 	@Column(name = "tipo_identificacion")
-	private int tipoIdentificacion;
+	private String tipoIdentificacion;
 
 	@Column(name = "numero_identificacion")
 	private int numeroNdentificacion;
@@ -43,7 +43,7 @@ public class Empresa {
 		super();
 	}
 
-	public Empresa(int idEmpresa, int tipoIdentificacion, int numeroNdentificacion, String nombre, String direccion,
+	public Empresa(int idEmpresa, String tipoIdentificacion, int numeroNdentificacion, String nombre, String direccion,
 			String ciudad, String departamento, String pais, String telefono) {
 		super();
 		this.idEmpresa = idEmpresa;
@@ -65,11 +65,11 @@ public class Empresa {
 		this.idEmpresa = idEmpresa;
 	}
 
-	public int getTipoIdentificacion() {
+	public String getTipoIdentificacion() {
 		return tipoIdentificacion;
 	}
 
-	public void setTipoIdentificacion(int tipoIdentificacion) {
+	public void setTipoIdentificacion(String tipoIdentificacion) {
 		this.tipoIdentificacion = tipoIdentificacion;
 	}
 

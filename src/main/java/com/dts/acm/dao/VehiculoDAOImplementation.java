@@ -9,7 +9,6 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.dts.acm.entity.Usuario;
 import com.dts.acm.entity.Vehiculo;
 
 @Repository
