@@ -34,7 +34,7 @@ CREATE TABLE `empresa` (
   `telefono` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id_empresa`),
   UNIQUE KEY `numero_identificacion_UNIQUE` (`numero_identificacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
-INSERT INTO `empresa` VALUES (1,'NIT',80456789,'Tranzit SAS','CL 123 45 67','Bogotá','Cundinamarca','Colombia','3231059'),(2,'NIT',80456790,'Consorcio Express','CR 23 58 96','Bogotá','Cundinamarca','Colombia','2356987'),(5,'NIT',80456791,'Ciudad Movil','CR 23 58 96','Bogotá','Cundinamarca','Colombia','6795900'),(6,'NIT',123456,'Masivo Capital SAS','CALLE 1 45 78','Bogotá','Cundinamarca','Colombia','2205060');
+INSERT INTO `empresa` VALUES (1,'NIT',80456789,'Tranzit SAS','CL 123 45 67','Bogotá','Cundinamarca','Colombia','3231059'),(2,'NIT',80456790,'Consorcio Express','CR 23 58 96','Bogotá','Cundinamarca','Colombia','2356987'),(5,'NIT',80456791,'Ciudad Movil','CR 23 58 96','Bogotá','Cundinamarca','Colombia','6795900'),(6,'NIT',123456,'Masivo Capital SAS','CALLE 1 45 78','Bogotá','Cundinamarca','Colombia','2205060'),(7,'NIT',77896541,'ETIB SAS','Av. El Dorado No. 68 C61 Oficina 529','Bogotá','Cundinamarca','Colombia','4543923'),(36,'NIT',45873396,'ESTE ES MI BUS S.A.S.','TRANSV. 94 L N°80-53','Bogotá','Cundinamarca','Colombia','4422584'),(37,'NIT',79833145,'ORGANIZACIÓN SUMA S.A.S.','CR 17 No.70-31 SUR','Bogotá','Cundinamarca','Colombia','3846240'),(41,'RUT',1323648,'GMÓVIL S.A.S.','Calle 24D # 86-53','Bogotá','Cundinamarca','Colombia','3225641');
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,7 +75,7 @@ CREATE TABLE `usuario` (
   KEY `fk_usuario_vehiculo_idx` (`id_vehiculo`),
   CONSTRAINT `fk_usuario_empresa` FOREIGN KEY (`id_empresa`) REFERENCES `empresa` (`id_empresa`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_usuario_vehiculo` FOREIGN KEY (`id_vehiculo`) REFERENCES `vehiculo` (`id_vehiculo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +84,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (2,'Cédula de ciudadanía',80123456,'Administrator','DTS','Bogotá','Cundinamarca','Colombia','3231059',1,0,0,1,NULL),(3,'Cédula de ciudadanía',45968325,'Conductor 1','CR 78 96-32','Bogotá','Cundinamarca','Colombia','5968741',5,0,1,0,1),(4,'Cédula de ciudadanía',1029684587,'Conductor 2','DG 103 11-13','Bogotá','Cundinamarca','Colombia','2006989',5,0,1,0,1);
+INSERT INTO `usuario` VALUES (2,'Cédula de ciudadanía',80123456,'José Gaviria','CL 122 S # 7 -96','Bogotá','Cundinamarca','Colombia','3231059',1,0,0,1,2),(3,'Cédula de ciudadanía',45968325,'Conductor 1','CR 78 96-32','Bogotá','Cundinamarca','Colombia','5968741',5,0,1,0,1),(4,'Cédula de ciudadanía',1029684587,'Conductor 2','DG 103 11-13','Bogotá','Cundinamarca','Colombia','2006989',5,0,1,0,1),(6,'LICENCIA',106588,'Juan Pablo Herrera','CR 103 # 12 - 36','Bogotá','Cundinamarca','Colombia','2003668',5,0,0,0,1),(7,'Cédula de ciudadanía',80123433,'Conductor 3','CR 103 # 23 - 69','Bogotá','Cundinamarca','Colombia','3231059',1,0,1,0,2),(10,'NIT',3569335,'Francisco Pachón','Av 72 # 65 - 63','Bogotá','Cundinamarca','Colombia','2005696',1,0,1,0,1),(11,'NIT',556369,'Fredy Parra','CL 1221 698','Bogotá','Bogotá','Colombia','9665831',6,0,0,0,6),(12,'PASAPORTE',99632659,'Omar Contreras','CR 45 65 88','Bogotá','Bogotá','Colombia','31025489',6,0,0,0,6),(13,'NIT',8874143,'Luz Moreno','Dg 456 e4','Bogotá','Bogotá','Colombia','7986532',6,0,0,0,6);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +113,7 @@ CREATE TABLE `vehiculo` (
   PRIMARY KEY (`id_vehiculo`),
   KEY `fk_vehiculo_empresa_idx` (`id_empresa`),
   CONSTRAINT `fk_vehiculo_empresa` FOREIGN KEY (`id_empresa`) REFERENCES `empresa` (`id_empresa`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +122,7 @@ CREATE TABLE `vehiculo` (
 
 LOCK TABLES `vehiculo` WRITE;
 /*!40000 ALTER TABLE `vehiculo` DISABLE KEYS */;
-INSERT INTO `vehiculo` VALUES (1,'DTS-596','5400','000154782','2002','2001-12-30',22,15,'3200K','3800K',3,'Volskwagen','Pasajeros',1);
+INSERT INTO `vehiculo` VALUES (1,'DTS-596','5400','000154782','2002','2001-12-30',22,15,'3200K','3800K',3,'Volskwagen','Pasajeros',1),(2,'WCC-123','3500','Monocasco','2021','2021-03-01',20,13,'3200','3300',6,'Volkswagen','Pasajeros',5),(3,'WCV-235','3500','Independiente','2021','2021-03-01',30,22,'3600','3650',6,'Mercedes Benz','Pasajeros',1),(6,'CDD-555','5000','Independiente','2018','2018-09-06',60,42,'6000','6000',8,'Blue Bird','Masivo Pasajeros',6),(7,'WXX-968','7500','Independiente','2019','2019-05-05',80,65,'6500','6600',8,'Marco Polo','Masivo Pasajeros',6);
 /*!40000 ALTER TABLE `vehiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -135,4 +135,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-29  8:26:30
+-- Dump completed on 2021-03-31  7:55:09
