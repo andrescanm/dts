@@ -15,10 +15,10 @@ public class Usuario {
 	@Column(name="id_usuario")
 	private int idUsuario;
 	
-	@Column(name="tipoIdentificacion")
+	@Column(name="tipo_identificacion")
 	private String tipoIdentificacion;
 	
-	@Column(name="numeroIdentificacion")
+	@Column(name="numero_identificacion")
 	private int numeroIdentificacion;
 	
 	@Column(name="nombre")
@@ -39,8 +39,11 @@ public class Usuario {
 	@Column(name="telefono")
 	private String telefono;
 	
-	@Column(name="idEmpresa")
+	@Column(name="id_empresa")
 	private int idEmpresa;
+
+	@Column(name="id_vehiculo")
+	private int idVehiculo;
 	
 	@Column(name="es_representanteLegal")
 	private byte esRepresentanteLegal;
@@ -147,6 +150,14 @@ public class Usuario {
 
 	public int getIdEmpresa() {
 		return idEmpresa;
+	}
+
+	public int getIdVehiculo() {
+		return idVehiculo;
+	}
+	
+	public void setIdVehiculo(int idVehiculo) {
+		this.idVehiculo = idVehiculo;
 	}
 
 	public void setIdEmpresa(int idEmpresa) {
