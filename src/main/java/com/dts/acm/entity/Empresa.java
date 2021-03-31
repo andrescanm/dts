@@ -19,7 +19,7 @@ public class Empresa {
 	private String tipoIdentificacion;
 
 	@Column(name = "numero_identificacion")
-	private int numeroNdentificacion;
+	private int numeroIdentificacion;
 
 	@Column(name = "nombre")
 	private String nombre;
@@ -48,7 +48,7 @@ public class Empresa {
 		super();
 		this.idEmpresa = idEmpresa;
 		this.tipoIdentificacion = tipoIdentificacion;
-		this.numeroNdentificacion = numeroNdentificacion;
+		this.numeroIdentificacion = numeroNdentificacion;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.ciudad = ciudad;
@@ -73,12 +73,12 @@ public class Empresa {
 		this.tipoIdentificacion = tipoIdentificacion;
 	}
 
-	public int getNumeroNdentificacion() {
-		return numeroNdentificacion;
+	public int getNumeroIdentificacion() {
+		return numeroIdentificacion;
 	}
 
-	public void setNumeroNdentificacion(int numeroNdentificacion) {
-		this.numeroNdentificacion = numeroNdentificacion;
+	public void setNumeroIdentificacion(int numeroNdentificacion) {
+		this.numeroIdentificacion = numeroNdentificacion;
 	}
 
 	public String getNombre() {
@@ -132,7 +132,7 @@ public class Empresa {
 	@Override
 	public String toString() {
 		return "Empresa [idEmpresa=" + idEmpresa + ", tipoIdentificacion=" + tipoIdentificacion
-				+ ", numeroNdentificacion=" + numeroNdentificacion + ", nombre=" + nombre + ", direccion=" + direccion
+				+ ", numeroIdentificacion=" + numeroIdentificacion + ", nombre=" + nombre + ", direccion=" + direccion
 				+ ", ciudad=" + ciudad + ", departamento=" + departamento + ", pais=" + pais + ", telefono=" + telefono
 				+ "]";
 	}
